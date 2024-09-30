@@ -50,7 +50,7 @@ stages:
               script: |
                 # Modify deployment script based on the app type
                 echo "Starting deployment script run"
-                sudo java -jar '$(Build.ArtifactStagingDirectory)/drop/**/target/*.war'
+                sudo java -jar '$(Pipeline.Workspace)/drop/**/target/*.jar'
         routeTraffic:
           steps:
           - script: echo routing traffic
